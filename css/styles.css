@@ -211,6 +211,7 @@ body {
 .deals {
   background-color: rgb(236, 236, 236);
   padding: 20px;
+  padding: 20px 20px 60px 20px;
 }
 
 .deals--heading {
@@ -234,6 +235,42 @@ body {
   text-align: center;
   padding: 20px;
 }
+
+/* deals arrow buttons */
+
+.deals-arrow {
+  width: 60px;
+  height: 35px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* border: 1px solid rgb(248, 248, 248); */
+  border: none;
+  padding: 2px;
+  position: absolute;
+}
+
+.deals-arrow:hover {
+
+  
+}
+
+#prev-deal {
+  background-image: url(../img/left-arrow.png);
+  left: calc(50% - 25%);
+}
+#prev-deal:hover {
+  left: calc(50% - 25.2%);
+}
+
+#next-deal {
+  background-image: url(../img/right-arrow.png);
+  right: calc(50% - 25%);
+}
+#next-deal:hover {
+  right: calc(50% - 25.2%);
+}
+
 .deal {
   display: inline-block;
   width: 49%;
@@ -267,4 +304,9 @@ body {
   text-align: left;
   padding: 10px 20px;
   font-weight: 500;
+}
+
+.deal-image {
+  max-width: 100%;
+  height: auto;
 }

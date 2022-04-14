@@ -63,7 +63,7 @@
         dealsContents += `
         <div class="deal">
             <div class="box">
-              <img src="img/${deal.image}" alt="">
+              <img class="deal-image" src="img/${deal.image}" alt="">
             </div>
             <div class="box">
               <h3 class="deal-heading">${deal.title}</h3>
