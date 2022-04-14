@@ -9,8 +9,6 @@
         this.discount = discount;
         this.price = price;
       }
-
-
     }
 
     let siteDeals = [
@@ -24,12 +22,6 @@
       new siteDeal('10', '550', 'Roof Renovation', 'Many desktop publishing packages and web page editors now use Lorem Ipsur infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',  'house.png', 'house'),
       new siteDeal('10', '550', 'Roof Renovation', 'Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover maby accident, sometimes on purpose (injected humour and the like).',  'house.png', 'house')
     ]
-
-    console.log(siteDeals);
-
-    // set ( increment/decrement ) index 
-    // get two deals from dealsList
-    // render two deals
 
     let dealsIndex = 0;
     document.getElementById('next-deal').addEventListener('click', next);
@@ -67,8 +59,6 @@
       let dealsToDisplay = getDeals(2);
       let dealsListDom = document.querySelector('.deals-list');
       
-
-
       for(let deal of dealsToDisplay){
         dealsContents += `
         <div class="deal">
