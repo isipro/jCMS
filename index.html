@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+  <body>
+  
+  <!-- ##### Header ##### -->
+  <header class="website-header">
+
+    <!-- logo -->
+    <div class="logo">
+      <img src="img/logo.jpg" alt="">
+    </div>
+
+    <!-- navigation -->
+    <nav class="website-navigation">
+      <div class="menu">
+        <ul>
+          <li><a id="nav-home">home</a></li>
+          <li><a id="nav-services">services</a></li>
+          <li><a id="nav-deals">deals</a></li>
+          <li><a id="nav-projects">projects</a></li>
+          <li><a id="nav-contacts" >contacts</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </header> 
+
+  <!-- ##### Hero Unit ##### -->
+  <section class="hero-unit">
+    <h1 class="website-heading">Your Company Business Website</h1>
+  </section>
+  
+
+  <!-- ##### Services ##### -->
+  <section class="services">
+
+    <div class="services-list">
+      <h2 class="section-heading services--heading">Our Services</h2>
+      <div class="filter-component">
+        <!-- <label for="filter-by-label"> 
+          
+        </label> -->
+        <input class="filter-input" list="services-list-filter" id="filter-by-label" name="filter-by-label" value="all" onfocus="this.value=''" onchange="this.blur();"/>
+        <datalist class="filter" id="services-list-filter">
+            
+        </datalist>
+        <button id="filter-btn">Filter</button>
+      </div>
+      <div class="services-list-inner">
+
+      </div>
+    </div>    
+  </section>
+
+  <!-- ##### Deals ##### -->
+  <section class="deals">
+    <h2 class="section-heading deals--heading">Deals</h2>
+    <div class="deals-inner">
+      
+
+      <div class="deals-list">
+  
+      </div>
+      <nav class="deal-nav">
+        <button id="prev-deal">(-)</button>
+        <button id="next-deal">(+)</button>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ##### Completed Projects ##### -->
+  <section class="projects">
+    <h2 class="projects">Our Projects</h2>
+  </section>
+
+  <!-- ##### Footer ##### -->
+  <footer class="website-footer">
+    <!-- footer Graphic -->
+    <div class="footer-graphic">
+
+    </div>
+
+    <!-- social media buttons -->
+    <div class="social">
+      <div class="fb">fb</div>
+      <div class="insta">insta</div>
+    </div>
+
+    <!-- contact info -->
+    <div class="contacts">
+      <h3 class="contact-us">Contact Us</h3>
+    </div>
+
+  </footer>
+ 
+    <button id="scrollToTop" class="scroll-to-top">go up ^</button>
+
+  <script src="js/nav.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/deals.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
