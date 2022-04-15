@@ -27,8 +27,8 @@
   
   let n = 0;
   function loadProjects(){
-    if(n <= projects.length - 2) {
-      n += 2;
+    if(n <= projects.length - 3) {
+      n += 3;
     }
     debugger;
     return projects.slice(0, n); 
