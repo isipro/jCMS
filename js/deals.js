@@ -1,3 +1,5 @@
+(()=>{
+
 // >>>> Site Deals <<<< //
 
     // Deals Model
@@ -49,7 +51,7 @@
       renderDeals();
     }
 
-    let dealsToDisplay = []
+    let dealsToDisplay = [];
     function getDeals(n){
       return siteDeals.slice(dealsIndex, dealsIndex + n);
     }
@@ -76,3 +78,6 @@
 
     }
     renderDeals();
+
+})()
+
