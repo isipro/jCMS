@@ -215,7 +215,7 @@ body {
 }
 
 .deals--heading {
-  padding: 10px 20px;
+  padding: 20px 20px;
   margin: 0 !important;
   
 }
@@ -354,12 +354,11 @@ body {
   transition:all;
   transition: opacity 1s;
   -webkit-transition: opacity 1s;
-  opacity: 1;
+  opacity: 2;
 }
 
 .hidden {
-  opacity: 0;
-  border: 1px solid red;
+  opacity: 0.1;
 }
 
 .project .box{
@@ -386,3 +385,4 @@ body {
 .load-more-btn:hover {
   color: #1668ac;
 }
+
