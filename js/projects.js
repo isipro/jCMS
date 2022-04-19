@@ -2,6 +2,9 @@
 (()=>{
   // >>>> Site Projects <<<< //
 
+
+  // Model
+
   class Project {
     constructor(title, info, image1, image2){
       this.title = title;
@@ -10,6 +13,8 @@
       this.image2 = image2;
     }
   }
+
+  // Data
 
   let projects = [
     new Project('Front Yard Renovation at Kasper','project info', 'image1.jpg', 'image2.jpg'),
@@ -25,6 +30,8 @@
   ]
 
   
+  // Controller
+
   let n = 0;
   function loadProjects(){
     if(n <= projects.length - 3) {
@@ -34,10 +41,46 @@
     return projects.slice(0, n); 
   }
   
-
-  // number to load
   
+  function makeElVisible(){
+    let projectsEls = document.querySelectorAll('.project');
+    console.log('making el visible');
 
+    for ( let le of projectsEls){
+
+      if(isScrolledIntoView(le)){
+        le.classList.remove('hidden');
+      } else {
+        le.classList.add('hidden');
+      }
+    }
+  }
+
+  window.onscroll = makeElVisible;
+
+  let loadMoreBtn = document.querySelector('.load-more-btn');
+  loadMoreBtn.addEventListener('click', ()=>{
+    loadProjects();
+    renderProjects();
+  });
+
+  
+  function isScrolledIntoView(el) {
+    var rect = el.getBoundingClientRect();
+    
+    var elemTop = rect.top;
+    var elemBottom = rect.bottom;
+
+    // Only completely visible elements return true:
+    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+    // Partially visible elements return true:
+    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
+    return isVisible;
+}
+
+
+  // Render 
+  
   function renderProjects(){
     let = projectsContents = ``;
     let loadedProjects = loadProjects();
@@ -68,41 +111,7 @@
   renderProjects();
 
 
-  function isScrolledIntoView(el) {
-    var rect = el.getBoundingClientRect();
-    
-    var elemTop = rect.top;
-    var elemBottom = rect.bottom;
-
-    // Only completely visible elements return true:
-    var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
-    // Partially visible elements return true:
-    //isVisible = elemTop < window.innerHeight && elemBottom >= 0;
-    return isVisible;
-}
-
   
 
-  function makeElVisible(){
-    let projectsEls = document.querySelectorAll('.project');
-    console.log('making el visible');
-
-    for ( let le of projectsEls){
-
-      if(isScrolledIntoView(le)){
-        le.classList.remove('hidden');
-      } else {
-        le.classList.add('hidden');
-      }
-    }
-  }
-
-  window.onscroll = makeElVisible;
-
-  let loadMoreBtn = document.querySelector('.load-more-btn');
-  loadMoreBtn.addEventListener('click', ()=>{
-    loadProjects();
-    renderProjects();
-  });
 
 })()

@@ -88,10 +88,14 @@ body {
   display: none;
   bottom: 30px;
   right: 30px;
-  border: 1px solid blue;
-  width: 100px;
-  height: 50px;
+  /* border: 1px solid blue; */
+  width: 48px;
+  height: 35px;
   z-index: 100;
+  box-shadow: 0 2px 10px #858585;
+  background-color: white;
+  border: 1px solid #c7c6c6;
+  border-radius: 5px;
 }
 
 .showBtn {
@@ -386,3 +390,10 @@ body {
   color: #1668ac;
 }
 
+/* ***** Deals Section ***** */
+
+.website-footer {
+  height: 300px;
+  width: 100%;
+  background-color: black;
+}

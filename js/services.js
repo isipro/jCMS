@@ -1,6 +1,6 @@
 // >>>> Site Services <<<< //
 
-  // Site Service Model
+  // Model
   class SiteService {
 
     constructor(title, info, image, label ){
@@ -11,25 +11,66 @@
     }
   }
 
-  // Site Service Data
+  // Data
   let siteServicesList = [
     new SiteService('House Keeping', '', 'service-placeholder.png', 'house'),
     new SiteService('Carpet Cleaning', '',  'service-placeholder.png', 'house'),
     new SiteService('Grass Cutting', '',  'service-placeholder.png', 'yard'),
     new SiteService('Garage Doors Repair', '',  'service-placeholder.png', 'garage'),
     new SiteService('Remodelling', '', 'service-placeholder.png', 'house'),
-    new SiteService('Painting', '',  'service-placeholder.png', 'house'),
+    new SiteService('Painting', '',  'service-placeholder.png', 'garage'),
     new SiteService('Painting', '',  'service-placeholder.png', 'yard'),
     new SiteService('Roof Renovation', '',  'service-placeholder.png', 'house'),
     new SiteService('Remodelling', '', 'service-placeholder.png', 'garage'),
     new SiteService('Flower Planting', '',  'service-placeholder.png', 'garden'),
     new SiteService('Tree Planting', '',  'service-placeholder.png', 'garden'),
-    new SiteService('Reconstruction', '',  'service-placeholder.png', 'house')
+    new SiteService('Reconstruction', '',  'service-placeholder.png', 'garage')
   ]
 
 
+  // Controller
+
+  /**
+   * Gets all label types to populate the filter
+   * @param {*} siteServicesList 
+   * @returns the labels
+   */
+   function getLabels(siteServicesList){
+    let labels = [];
+    for(let service of siteServicesList) {
+      if(!labels.includes(service.label)){
+        labels.push(service.label);
+      }
+    }
+    return labels;
+  }
+
+
+   /**
+   * Filters the services list leaving only the selected 
+   * @param {*} filterLabel 
+   * @returns the newly created array with the selected items
+   */
+    function filterData(filterLabel){
+      return (filterLabel != 'all') ? siteServicesList.filter(service => service.label == filterLabel) : siteServicesList;    
+  }
+
+
+ /**
+   *  Reloads / Rerenders the page after the filter is used
+   */
+  function onFilter(e){
+    let filterLabel = document.getElementById('filter-by-label');
+    let newSiteServiceList = filterData(filterLabel.value);
+    renderFilter();
+    renderServices(newSiteServiceList);
+  }
+
+
+// Render
+
 /**
- * Render the services in the services component
+ * Render 
  * @param {*} siteServicesList 
  */
   function renderServices(siteServicesList){
@@ -54,22 +95,6 @@
 
 
   /**
-   * Gets all label types to populate the filter
-   * @param {*} siteServicesList 
-   * @returns the labels
-   */
-  function getLabels(siteServicesList){
-    let labels = [];
-    for(let service of siteServicesList) {
-      if(!labels.includes(service.label)){
-        labels.push(service.label);
-      }
-    }
-    return labels;
-  }
-
-
-  /**
    * Renders the filter components
    */
   function renderFilter(){
@@ -88,21 +113,5 @@
   let filterBtn = document.getElementById('filter-btn');
   filterBtn.addEventListener("click", onFilter);
 
-  /**
-   *  Reloads / Rerenders the page after the filter is used
-   */
-  function onFilter(e){
-    let filterLabel = document.getElementById('filter-by-label');
-    let newSiteServiceList = filterData(filterLabel.value);
-    renderFilter();
-    renderServices(newSiteServiceList);
-  }
-
-  /**
-   * Filters the services list leaving only the selected 
-   * @param {*} filterLabel 
-   * @returns the newly created array with the selected items
-   */
-    function filterData(filterLabel){
-        return (filterLabel != 'all') ? siteServicesList.filter(service => service.label == filterLabel) : siteServicesList;    
-    }
+ 
+ 
