@@ -29,7 +29,7 @@
     new Project('House Painting Job','project info', 'image1.jpg', 'image2.jpg'),
   ]
 
-  
+
   // Controller
 
   let n = 0;
