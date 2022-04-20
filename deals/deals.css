@@ -43,7 +43,7 @@
 }
 
 #prev-deal {
-  background-image: url(../img/left-arrow.png);
+  background-image: url(../assets/img/left-arrow.png);
   left: calc(50% - 25%);
 }
 #prev-deal:hover {
@@ -51,7 +51,7 @@
 }
 
 #next-deal {
-  background-image: url(../img/right-arrow.png);
+  background-image: url(../assets/img/right-arrow.png);
   right: calc(50% - 25%);
 }
 #next-deal:hover {

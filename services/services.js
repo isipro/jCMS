@@ -83,7 +83,7 @@
       `
         <div class="service">
           <h3 class="title"> ${service.title} </h3>
-          <img class="image" src="img/${service.image}"/>
+          <img class="image" src="assets/img/${service.image}"/>
           <p class="info">${service.info}</p>
           <span class="label">${service.label}</span>
         </div>

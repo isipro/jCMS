@@ -90,7 +90,7 @@
       projectsContents += 
       `<div class="project hidden">
         <div class="box1">
-          <img class="project-image" src="img/${project.image1}"/>
+          <img class="project-image" src="assets/img/${project.image1}"/>
         </div>
         <div class="box2">
           <h3 class="project-heading">
@@ -101,7 +101,7 @@
           </p>
         </div>
         <div class="box3">
-          <img class="project-image" src="img/${project.image2}"/>
+          <img class="project-image" src="assets/img/${project.image2}"/>
         </div>
       </div>
       `

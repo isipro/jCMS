@@ -8,6 +8,7 @@
 @import 'services/services.css';
 @import 'deals/deals.css';
 @import 'projects/projects.css';
+@import 'footer/footer.css';
 
 *,* {
   box-sizing: border-box;
