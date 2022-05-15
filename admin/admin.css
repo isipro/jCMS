@@ -1,0 +1,40 @@
+
+.logo {
+  /* background-size: contain;
+  background-position: center middle;
+  background-repeat: no-repeat; */
+}
+
+.logo-admin {
+  position: absolute;
+  top: 0px;
+  right: -55px;
+}
+
+
+.nav-background-admin {
+  position: absolute;
+  display: inline-block;
+  width: 300px;
+  bottom: 5px;
+  left: calc(50% - 150px);
+}
+
+
+.nav-background-admin input{
+  display: block;
+  width: 50%;
+  float: left;
+  height: 32px;
+  border-radius: 5;
+}
+
+.nav-background-admin input[type="text"] {
+  padding: 5px;
+  border-radius: 5;
+  background: #5d808b;
+}
+
+.nav-background-admin input[type="text"]:invalid{
+  outline: 2px solid red;
+}

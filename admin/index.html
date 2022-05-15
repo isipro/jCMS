@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body class="site-body">
+    <!-- ##### Header ##### -->
+    <header class="website-header">
+      <!-- logo -->
+      <div class="logo">
+        <!-- <img src="assets/img/logo.jpg" alt=""> -->
+        <div class="logo-admin">
+          <button
+            type="button"
+            class="btn btn-primary btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            edit
+          </button>
+        </div>
+      </div>
+
+      <!-- ==== Logo Admin ==== -->
+
+      <!-- Modal -->
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="false"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="false"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="formFile" class="form-label"
+                  >Default file input example</label
+                >
+                <input class="form-control" type="file" id="formFile" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="updateLogo()"
+                data-bs-dismiss="modal"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- /==== Logo Admin ==== -->
+
+      <!-- navigation -->
+      <nav class="website-navigation">
+        <div class="menu">
+          <ul>
+            <li><a id="nav-home">home</a></li>
+            <li><a id="nav-services">services</a></li>
+            <li><a id="nav-deals">deals</a></li>
+            <li><a id="nav-projects">projects</a></li>
+            <li><a id="nav-contacts">contacts</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <!-- === Nav Background Admin  -->
+
+    <div class="nav-background-admin">
+      <input type="color" id="navColorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#7c878d"> 
+      <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#7c878d" id="hexcolor"></input>
+    </div>
+
+    <!-- === / Nav Background Admin  -->
+
+    </header>
+
+    <!-- ##### Hero Unit ##### -->
+    <section class="hero-unit">
+      <h1 class="website-heading">Your Company Business Website</h1>
+    </section>
+
+    <!-- ##### Services ##### -->
+    <section class="services">
+      <div class="services-list">
+        <h2 class="section-heading services--heading">Our Services</h2>
+        <div class="filter-component">
+          <!-- <label for="filter-by-label"> 
+          
+        </label> -->
+          <input
+            class="filter-input"
+            list="services-list-filter"
+            id="filter-by-label"
+            name="filter-by-label"
+            value="all"
+            onfocus="this.value=''"
+            onchange="this.blur();"
+          />
+          <datalist class="filter" id="services-list-filter"> </datalist>
+          <button id="filter-btn">Filter</button>
+        </div>
+        <div class="services-list-inner"></div>
+      </div>
+    </section>
+
+    <!-- ##### Deals ##### -->
+    <section class="deals">
+      <h2 class="section-heading deals--heading">Deals</h2>
+      <div class="deals-inner">
+        <div class="deals-list"></div>
+        <nav class="deal-nav">
+          <button id="prev-deal" class="deals-arrow"></button>
+          <button id="next-deal" class="deals-arrow"></button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ##### Completed Projects ##### -->
+    <section class="projects">
+      <h2 class="section-heading projects--heading">Our Projects</h2>
+      <div class="projects-inner">
+        <div class="projects-list"></div>
+        <div class="load-more">
+          <button class="load-more-btn">load more ...</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ##### Footer ##### -->
+    <footer class="website-footer">
+      <!-- footer Graphic -->
+      <div class="footer-graphic"></div>
+
+      <!-- social media buttons -->
+      <div class="social">
+        <div class="fb">fb</div>
+        <div class="insta">insta</div>
+      </div>
+
+      <!-- contact info -->
+      <div class="contacts">
+        <h3 class="contact-us">Contact Us</h3>
+      </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-to-top">go up</button>
+
+    <script src="jquery.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="navigation/nav.js"></script>
+    <script src="services/services.js"></script>
+    <script src="deals/deals.js"></script>
+    <script src="projects/projects.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
