@@ -35,7 +35,6 @@
       <!-- ==== Logo Admin ==== -->
 
       <!-- Modal -->
-      <!-- Modal -->
       <div
         class="modal fade"
         id="staticBackdrop"
@@ -137,8 +136,69 @@
           <datalist class="filter" id="services-list-filter"> </datalist>
           <button id="filter-btn">Filter</button>
         </div>
-        <div class="services-list-inner"></div>
+        <div class="services-list-inner">
+          
+        </div>
       </div>
+
+      <div
+        class="modal fade edit-service-modal"
+        id="serviceModal"
+        data-bs-backdrop="false"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="serviceModalLabel"
+        aria-hidden="false"
+      >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="serviceModalLabel">Edit Service</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+
+              <label for="srvTitle">Service ID:</label>
+              <input class="form-control srv-id" type="text"/>
+
+              <label for="srvTitle">Title</label>
+              <input class="form-control srv-title" type="text"/>
+
+              <label for="srvLabel" >Label</label>
+              <input class="form-control srv-label" type="text"/>
+
+              <label for="srvImage">Image</label>
+              <input class="form-control srv-image"  type="file"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="updateService(event)"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
     </section>
 
     <!-- ##### Deals ##### -->

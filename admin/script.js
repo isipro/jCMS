@@ -1,34 +1,81 @@
-'use strict';
-    
-  setNavigation();
-  renderFilter();
-  renderServices(siteServicesList);
-  // renderDeals();
+"use strict";
 
+setNavigation();
+renderFilter();
+renderServices(siteServicesList);
 
-
-// Admin 
-
-function updateLogo(){
- 
-  debugger;
+// Admin
+function updateLogo() {
   let fileName = $('input[type="file"]')[0].files[0].name;
-  console.log('updating logo ' + fileName);
-  $('.logo').css('background-image', 'url("' + 'assets/img/' + fileName + '")');
+  console.log("updating logo " + fileName);
+  $(".logo").css("background-image", 'url("' + "assets/img/" + fileName + '")');
+}
+
+/** 
+ *  Header Color Change 
+ *  changes the color of the header by using the color picker of the input field
+ */
+$("#navColorpicker").on("input", function () {
+  $("#hexcolor").val(this.value);
+  updateNavbar(this.value);
+});
+$("#hexcolor").on("input", function () {
+  $("#navColorpicker").val(this.value);
+  updateNavbar(this.value);
+});
+
+function updateNavbar(val) {
+  $(".website-header").css("background-color", val);
+}
+
+/**
+ * Removes the service by clicking on the track icon
+ * 
+ */
+$(".admin-pan .trash").on("click", function () {
+  debugger;
+  this.parentElement.parentElement.remove();
+  console.log("deleting service");
+});
+
+
+// temp
+function updateService(e){ 
+  debugger;
+  console.log(e.target)
+
+  $('#srv-title-' + $('.srv-id').val()).text($('.srv-title').val());
+  $('#srv-label-' + $('.srv-id').val()).text($('.srv-label').val());
+
+  let img = $('.srv-image')[0].files[0].name;
+  
+  $('#srv-img-' + $('.srv-id').val()).attr("src", 'assets/img/'+img);
 
 }
 
+/**
+ * displays a modal to update the service title, picture and label
+ * 
+ */
+$(".admin-pan .edit").on("click", function () {
+  // debugger;
+  console.log('show modal');
 
+  let serviceId = this.id;
+  let allServices = $('.service');
+  let srv = allServices[serviceId];
+  let title = $('#srv-title-' + serviceId).text();
+  let label = $('#srv-label-' + serviceId).text();
+  // let img = $('#srv-img-' + serviceId).text();
 
-$('#navColorpicker').on('input', function() {
-	$('#hexcolor').val(this.value);
-  updateNavbar(this.value);
+  $('.srv-id').val(this.id);
+  $('.srv-title').val(title)
+  $('.srv-label').val(label);
+  debugger;
+  // $('.srv-img').attr("src", img)
+
+  let modalObj = new bootstrap.Modal(document.getElementById('serviceModal'));
+  modalObj.show();
+
 });
-$('#hexcolor').on('input', function() {
-  $('#navColorpicker').val(this.value);
-  updateNavbar(this.value);
-});
 
-function updateNavbar(val){
-  $('.website-header').css('background-color', val)
-}
