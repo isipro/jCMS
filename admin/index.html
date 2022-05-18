@@ -58,9 +58,9 @@
             <div class="modal-body">
               <div class="mb-3">
                 <label for="formFile" class="form-label"
-                  >Default file input example</label
+                  >Change website logo</label
                 >
-                <input class="form-control" type="file" id="formFile" />
+                <input class="form-control logo-file-input" type="file" id="formFile" />
               </div>
             </div>
             <div class="modal-footer">
@@ -107,6 +107,11 @@
       <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#7c878d" id="hexcolor"></input>
     </div>
 
+    <div class="nav-menu-admin">
+      <input type="color" id="navColorpickerMenu" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#7c878d"> 
+      <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#7c878d" id="hexcolorMenu"></input>
+    </div>
+
     <!-- === / Nav Background Admin  -->
 
     </header>
@@ -114,7 +119,72 @@
     <!-- ##### Hero Unit ##### -->
     <section class="hero-unit">
       <h1 class="website-heading">Your Company Business Website</h1>
+      <div class="hero-unit-admin">
+        <!-- <label for="srvImage">Select Background Image:</label>
+        <input class="form-control hero-image"  type="file"/> -->
+        <button
+            type="button"
+            class="btn btn-primary btn-sm heroUnit-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#heroUnit"
+          >
+            edit
+          </button>
+      </div>
     </section>
+
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="heroUnit"
+        data-bs-backdrop="false"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="heroUnitLabel"
+        aria-hidden="false"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="heroUnitLabel">Modal title</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="formFile" class="form-label"
+                  >Change Website Main Image</label
+                >
+                <input class="form-control logo-file-input" type="file" id="formFileHero" />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="updateHero()"
+                data-bs-dismiss="modal"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
     <!-- ##### Services ##### -->
     <section class="services">

@@ -4,12 +4,30 @@ setNavigation();
 renderFilter();
 renderServices(siteServicesList);
 
-// Admin
+
+/** 
+ *   ========= Administration ==============
+ */
+
+/**
+ * Website Logo - change image
+ */
 function updateLogo() {
-  let fileName = $('input[type="file"]')[0].files[0].name;
+  let fileName = $('.logo-file-input')[0].files[0].name;
   console.log("updating logo " + fileName);
   $(".logo").css("background-image", 'url("' + "assets/img/" + fileName + '")');
 }
+
+/**
+ * Website Hero Unit - change image
+ */
+ function updateHero() {
+   debugger;
+  let fileName = $('#formFileHero')[0].files[0].name;
+  console.log("updating logo " + fileName);
+  $(".hero-unit").css("background-image", 'url("' + "assets/img/" + fileName + '")');
+}
+
 
 /** 
  *  Header Color Change 
@@ -78,4 +96,22 @@ $(".admin-pan .edit").on("click", function () {
   modalObj.show();
 
 });
+
+
+/** 
+ *  Menu Color Change 
+ *  changes the background color of the menu by using the color picker of the input field
+ */
+ $("#navColorpickerMenu").on("input", function () {
+  $("#hexcolorMenu").val(this.value);
+  updateNavbar(this.value);
+});
+$("#hexcolorMenu").on("input", function () {
+  $("#navColorpickerMenu").val(this.value);
+  updateNavbar(this.value);
+});
+
+function updateNavbar(val) {
+  $(".menu").css("background-color", val);
+}
 
