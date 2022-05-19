@@ -9,13 +9,11 @@
 .deals--heading {
   padding: 20px 20px;
   margin: 0 !important;
-  
 }
 .deals-inner {
   background-color: none;
   border-radius: 10px;
 }
-
 
 .deals-list {
   width: 100%;
@@ -24,22 +22,15 @@
 }
 
 /* deals arrow buttons */
-
 .deals-arrow {
   width: 60px;
   height: 35px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  /* border: 1px solid rgb(248, 248, 248); */
   border: none;
   padding: 2px;
   position: absolute;
-}
-
-.deals-arrow:hover {
-
-  
 }
 
 #prev-deal {
@@ -64,12 +55,10 @@
   min-width: 350px;
   padding: 20px;
   box-sizing: border-box;
-  /* background-color: rgb(237 237 237); */
   background-color: rgb(249 249 249);
   border: 1px solid #e5e5e5;
   font-weight: 300;
   text-align: left;
-  
 }
 
 .deal .box {
@@ -77,7 +66,6 @@
   box-sizing: border-box;
   padding: 5px;
   width: 49%;
-  
 }
 .deal:first-child {
   margin-right: 15px;

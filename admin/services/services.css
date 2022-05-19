@@ -2,12 +2,7 @@
 
 .services {
   background: transparent;
-  border: none; /* TODO: remove */
-  /* margin-top: -85px; */
-}
-
-.services--heading {
-
+  border: none;
 }
 
 .services-list-inner {
@@ -37,7 +32,7 @@
 }
 
 .service .image {
-  width: 100%; 
+  width: 100%;
 }
 
 .services .label {
@@ -83,7 +78,6 @@
   border: 1px solid lightblue;
   border-radius: 5px;
   font-size: 15px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
-
 }

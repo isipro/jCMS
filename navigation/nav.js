@@ -30,7 +30,7 @@
 
 
   /** 
-   * add all events handlers to the main nav menu 
+   * addс all events handlers to the main nav menu 
   */
   function setNavigation(){
     let navHome = document.getElementById('nav-home');

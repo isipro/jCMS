@@ -42,11 +42,16 @@
   top: 63px;
   right: -1px;
   width: 25px;
-  height: 120px;
+  height: 65px;
   border: 1px solid #2196f3;
   border-radius: 5px 0px 0px 5px;
   z-index: 1000;
   background-color: #e2eaf1;
+}
+
+.service .admin-pan svg {
+  /* box-shadow: 0px 0px 1px rgb(69, 2, 252); */
+  cursor: pointer;
 }
 
 .heroUnit-btn {
