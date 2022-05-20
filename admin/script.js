@@ -1,7 +1,5 @@
 "use strict";
 
-
-
 /**
  * Website Logo - change image
  */
@@ -43,7 +41,7 @@ function updateNavbar(val) {
 /**
  * Removes the service by clicking on the track icon
  * note: I am not using the rendering service here for demo purposes
- * if rendering service is used then the eventHandler for addService, editService and deleteService needs to be rehooked bu calling the functions again 
+ * if rendering service is used then the eventHandler for addService, editService and deleteService needs to be rehooked bu calling the functions again
  */
 function deleteService() {
   $(".admin-pan .trash").on("click", function () {
@@ -53,13 +51,12 @@ function deleteService() {
   });
 }
 
-
 /**
  * Removes the service by clicking on the track icon
  *
  */
 
-let addService = function() {
+let addService = function () {
   $(".admin-pan .add").on("click", function () {
     console.log("deleting service");
     debugger;
@@ -75,8 +72,7 @@ let addService = function() {
     deleteService();
     editService();
   });
-}
-
+};
 
 function updateService(e) {
   console.log(e.target);
@@ -93,28 +89,26 @@ function updateService(e) {
  * displays a modal to update the service title, picture and label
  *
  */
-function editService(){
+function editService() {
   $(".admin-pan .edit").on("click", function () {
     console.log("show modal");
-  
+
     let serviceId = this.id;
     let allServices = $(".service");
     let srv = allServices[serviceId];
     let title = $("#srv-title-" + serviceId).text();
     let label = $("#srv-label-" + serviceId).text();
     // let img = $('#srv-img-' + serviceId).text();
-  
+
     $(".srv-id").val(this.id);
     $(".srv-title").val(title);
     $(".srv-label").val(label);
     // $('.srv-img').attr("src", img)
-  
+
     let modalObj = new bootstrap.Modal(document.getElementById("serviceModal"));
     modalObj.show();
   });
 }
-
-
 
 /**
  *  Menu Color Change
@@ -133,8 +127,7 @@ function updateNavbarMenu(val) {
   $(".menu").css("background-color", val);
 }
 
-
-function initAdmin(){
+function initAdmin() {
   editService();
   addService();
   deleteService();
