@@ -109,6 +109,7 @@ function onFilter(e) {
  * @param {*} siteServicesList
  */
 function renderServices(siteServicesList) {
+  console.log('rendering services');
   let services = document.querySelector(".services-list-inner");
   let servicesContent = "";
   services.innerHTML = servicesContent;
