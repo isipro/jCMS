@@ -5,8 +5,6 @@ renderFilter();
 renderServices(siteServicesList);
 
 
-// ==
-
 /**
  * Website Logo - change image
  */
